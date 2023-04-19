@@ -1,26 +1,33 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import myCat from './component/myCat.vue'
 export default {
-  name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    myCat
+  },
+  data() {
+    return {
+      stuArr: [
+        {
+          id: 1001,
+          name: "孙悟空",
+          sex: "男",
+          hobby: "吃桃子",
+        },
+        {
+          id: 1002,
+          name: "猪八戒",
+          sex: "男",
+          hobby: "背媳妇",
+        },
+      ],
+      count: 10,
+    };
+  },
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
